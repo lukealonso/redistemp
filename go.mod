@@ -1,4 +1,4 @@
-module github.com/lukealonso/redis/v7
+module github.com/lukealonso/redis
 
 require (
 	github.com/onsi/ginkgo v1.8.0
