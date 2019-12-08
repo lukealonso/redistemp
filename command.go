@@ -554,6 +554,15 @@ func NewBoolCmd(args ...interface{}) *BoolCmd {
 	}
 }
 
+func NewBoolCmdResult(val bool, err error) *BoolCmd {
+	return &BoolCmd{
+		val: val,
+		baseCmd: baseCmd{
+			err: err,
+		},
+	}
+}
+
 func (cmd *BoolCmd) Val() bool {
 	return cmd.val
 }
@@ -605,6 +614,15 @@ var _ Cmder = (*StringCmd)(nil)
 func NewStringCmd(args ...interface{}) *StringCmd {
 	return &StringCmd{
 		baseCmd: baseCmd{args: args},
+	}
+}
+
+func NewStringCmdResult(val string, err error) *StringCmd {
+	return &StringCmd{
+		val: val,
+		baseCmd: baseCmd{
+			err: err,
+		},
 	}
 }
 
